@@ -1,0 +1,81 @@
+/* Reset some default styles for the body and html elements */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+/* Styles for the header with class "global header" */
+
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+}
+
+/* Styles for the logo inside the header */
+
+.header img {
+    max-height: 50px;
+    margin-right: 5px;
+}
+
+/* Style for the text after the logo */
+
+.header-text{
+    color: black;
+    font-size: 18px;
+    font-style: bold;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    right: -100%;
+    animation: slideInText 5s forwards;
+}
+
+/* Keyframes for the animation */
+@keyframes slideInText {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 70px;
+    }
+}
+
+/* Styles for the content area */
+
+/*.content {
+    display: flex; /*the left panel and map side by side */
+   /* height: calc(100% - 50px); /* Calculate the height to fill the remaining space after the header 
+  }*/
+
+.left-panel {
+    background-color: aliceblue;
+    padding: 10px;
+    z-index: 1000;
+    position: absolute;
+   
+    left: 5px;
+}
+
+/* Style for the map container */
+
+.map-container {
+    height: 100%;
+    cursor: default;
+}
+/* Set custom cursor style when drawing and measuring are allowed */
+#map-container.leaflet-draw-draw-enabled,
+#map-container.leaflet-draw-edit-enabled,
+#map-container.leaflet-measure-path-measure {
+  cursor: crosshair;
+}
+
+
+#map {
+    height: 550px;
+}
